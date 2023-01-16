@@ -1,0 +1,109 @@
+
+.NavContainer{
+    width: 100vw;
+    height: 3rem;
+
+}
+.NavContainer nav.Main-Navbar{
+    width: 100vw;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    
+    
+}
+.Main-Navbar-contant{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 2.5%;
+    justify-content: space-between;
+}
+.NavBar-image{
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 20%;
+    transition: .5s;
+}
+.NavBar-image:hover {
+    border: #00000069 1px solid;
+}
+
+.Nav-Togle-Button{
+    border: none;
+
+}
+.Nav-Togle-Button i{
+
+    width: 100%;
+    height: 100%;
+}
+
+.NavBar-Hidden-containar{
+    position: fixed;
+    display: flex;
+    flex:coloumn ;
+    justify-content: flex-end;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 11;
+    background-color: #00000069;
+}
+.NavBar-Hidden-containar div{
+    width: 15rem;
+    height: 100%;
+    position: relative;
+    left: 15rem;
+    transition: .5s all;
+    background-color: whitesmoke;
+}
+.NavBar-Hidden-containar div nav.Main-Navbar{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    width: 10rem;
+    height: 20rem;
+    margin-left: 2.5rem;
+    margin-top: 10rem;
+}
+.NavBar-Hidden-containar div nav.Main-Navbar span{
+    font-weight:500;
+    padding: 5px;
+    font-size: 1rem;
+    overflow: visible;
+}
+
+
+.NavBar-Hidden-containar div nav.Main-Navbar span:hover,
+.NavBar-Hidden-containar div nav.Main-Navbar span:active{
+    border-bottom: 2px solid red;
+    font-weight: 800;
+
+}
+.NavBar-Hidden-containar[isvisible = "false"]{
+    visibility: hidden;
+}
+.NavBar-Hidden-containar[isvisible = "true"] div {
+    left: 0;
+}
+
+
+
+.Fav-Navbar-Container{
+    width: 100vw;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Fav-Navbar-Container label{
+    font-weight: 600;
+    color: firebrick;
+}
+
