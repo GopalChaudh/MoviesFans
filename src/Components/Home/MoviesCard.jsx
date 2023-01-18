@@ -28,7 +28,7 @@ export default function MoviesCard(props) {
           }
         }
       })
-  }, [])
+  }, [props.id])
   function HandleFavOnClick() {
     if (FavText === 'Add to Favorate') {
       setFavText('Added')

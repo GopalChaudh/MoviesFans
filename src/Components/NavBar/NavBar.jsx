@@ -24,7 +24,7 @@ export default class NavBar extends Component {
 
         <nav className="navbar Main-Navbar bg-light" >
         <div className='Main-Navbar-contant '>
-          <Link className="navbar-brand" to='/'><img src="logo192.png" className='NavBar-image bg-light' alt="Logo" />
+          <Link className="navbar-brand" to='/'><img src="./logo192.png" className='NavBar-image bg-light' alt="Logo" />
     
           </Link>
           <button className={

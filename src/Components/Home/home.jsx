@@ -1,4 +1,4 @@
-import React, { Component, Fragment ,lazy,Suspense } from 'react'
+import React, { Component,lazy,Suspense } from 'react'
 import Loading from '../Loading/Loading';
 import './Home.css';
 

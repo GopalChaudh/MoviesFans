@@ -29,9 +29,9 @@ export default class Footer extends Component {
       </div>
     </div>
 
-    <div class="bg-light py-4">
-      <div class="container text-center">
-        <p class="text-muted mb-0 py-2">© 2023 Gopal_chaudhary</p>
+    <div className="bg-light py-4">
+      <div className="container text-center">
+        <p className="text-muted mb-0 py-2">© 2023 Gopal_chaudhary</p>
       </div>
     </div>
   </footer>
