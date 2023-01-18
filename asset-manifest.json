@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/MoviesFans/static/css/main.6d69975a.css",
+    "main.js": "/MoviesFans/static/js/main.0607ac78.js",
+    "static/css/767.57bd4527.chunk.css": "/MoviesFans/static/css/767.57bd4527.chunk.css",
+    "static/js/767.cdef152c.chunk.js": "/MoviesFans/static/js/767.cdef152c.chunk.js",
+    "static/css/374.a68f14c0.chunk.css": "/MoviesFans/static/css/374.a68f14c0.chunk.css",
+    "static/js/374.c1533161.chunk.js": "/MoviesFans/static/js/374.c1533161.chunk.js",
+    "static/css/540.554b0e6c.chunk.css": "/MoviesFans/static/css/540.554b0e6c.chunk.css",
+    "static/js/540.428d8372.chunk.js": "/MoviesFans/static/js/540.428d8372.chunk.js",
+    "static/js/517.c44fe42d.chunk.js": "/MoviesFans/static/js/517.c44fe42d.chunk.js",
+    "static/js/126.a2d55f55.chunk.js": "/MoviesFans/static/js/126.a2d55f55.chunk.js",
+    "static/js/632.6b3d35cf.chunk.js": "/MoviesFans/static/js/632.6b3d35cf.chunk.js",
+    "static/js/703.eaaed454.chunk.js": "/MoviesFans/static/js/703.eaaed454.chunk.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/MoviesFans/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/MoviesFans/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/MoviesFans/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/MoviesFans/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/MoviesFans/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "index.html": "/MoviesFans/index.html",
+    "main.6d69975a.css.map": "/MoviesFans/static/css/main.6d69975a.css.map",
+    "main.0607ac78.js.map": "/MoviesFans/static/js/main.0607ac78.js.map",
+    "767.57bd4527.chunk.css.map": "/MoviesFans/static/css/767.57bd4527.chunk.css.map",
+    "767.cdef152c.chunk.js.map": "/MoviesFans/static/js/767.cdef152c.chunk.js.map",
+    "374.a68f14c0.chunk.css.map": "/MoviesFans/static/css/374.a68f14c0.chunk.css.map",
+    "374.c1533161.chunk.js.map": "/MoviesFans/static/js/374.c1533161.chunk.js.map",
+    "540.554b0e6c.chunk.css.map": "/MoviesFans/static/css/540.554b0e6c.chunk.css.map",
+    "540.428d8372.chunk.js.map": "/MoviesFans/static/js/540.428d8372.chunk.js.map",
+    "517.c44fe42d.chunk.js.map": "/MoviesFans/static/js/517.c44fe42d.chunk.js.map",
+    "126.a2d55f55.chunk.js.map": "/MoviesFans/static/js/126.a2d55f55.chunk.js.map",
+    "632.6b3d35cf.chunk.js.map": "/MoviesFans/static/js/632.6b3d35cf.chunk.js.map",
+    "703.eaaed454.chunk.js.map": "/MoviesFans/static/js/703.eaaed454.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d69975a.css",
+    "static/js/main.0607ac78.js"
+  ]
+}
