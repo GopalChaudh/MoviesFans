@@ -12,6 +12,7 @@ const [clicked,setIsclicked] = useState(false)
   function HandleFavOnClick() {
       db.collection('favorates').doc({ id: props.id }).delete()
         setIsclicked(true)
+        
     }
     
     
