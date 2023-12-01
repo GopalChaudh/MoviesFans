@@ -24,7 +24,7 @@ Brief description or introduction about your app.
 
 ## Usage
 
-Describe how to start or use your application locally:
+use  application locally:
 
 ```bash
 npm start
@@ -32,7 +32,6 @@ npm start
 
 ## Folder Structure
 
-Briefly describe the folder structure of your project.
 
 ```
 /src
