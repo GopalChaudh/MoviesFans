@@ -1,8 +1,8 @@
-import React, { Component, lazy } from 'react';
+import React, { Component } from 'react';
 import './NavBar.css'
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-const Logo = lazy(()=>import("./logo192.png"));
+
 export default class NavBar extends Component {
   constructor(props){
     super(props); 
@@ -26,7 +26,7 @@ export default class NavBar extends Component {
 
         <nav className="navbar Main-Navbar bg-light" >
         <div className='Main-Navbar-contant '>
-          <Link className="navbar-brand" to='/'><img src={Logo} className='NavBar-image bg-light' alt="Logo" />
+          <Link className="navbar-brand" to='/'><img src="./logo192.png" className='NavBar-image bg-light' alt="Logo" />
     
           </Link>
           {/* searc button */}
