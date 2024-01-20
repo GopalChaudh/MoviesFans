@@ -10,6 +10,7 @@ import Home from "./Components/Home/Home"
 import './index.css'
 const Favorate = lazy(() =>import('./Components/Favorate/Favorate'))
 const NavBar = lazy(() => import('./Components/NavBar/NavBar'))
+const Search = lazy(()=>import('./Components/search/Search'))
 
 
 
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')).render(
 
                 <Route path='/' element={<Home />} />
                 <Route path="/favorate" element={<Favorate />}/>
+                <Route path='/search' element={<Search />} />
 
             </Routes>
                 </Suspense>

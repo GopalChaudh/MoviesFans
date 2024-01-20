@@ -79,21 +79,20 @@
     
 }
 .trending-main-content{
-    box-sizing: content-box;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    padding: 0.3rem;
+    
 }
 .MovieCard-Container{
     width: 18rem;
     margin: 0.6rem;
-    /* scale: 0 0; */
-    /* animation: fadeIn; */
-    /* animation-timeline: view(); */
+    transition:100ms;
+  
 
+}
+.MovieCard-Container:hover{
+    scale: 1.1 1.1;
 }
 .MoviesCardFavButton{
     position: absolute;
@@ -107,9 +106,7 @@
     cursor: pointer;
     transition: 1s ;
 }
-.MoviesCard-image img:hover{
-    filter: contrast(150%) saturate(200%);
-} 
+
 .MoviesCardFavButton:hover,
 .MovieCard-Container .MoviesCard-image:hover + .MoviesCardFavButton{
     display: flex;

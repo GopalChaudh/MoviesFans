@@ -52,26 +52,38 @@ export default class MoviesData extends Component {
     
   }
 
-  MoreMovies = async (page) =>{
-    axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=06293f6c0ca5b9644e6de0b6aee187c5&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate`)
-    .then(res =>{
-    let totalMovies = [...res.data.results]
-    const BannerMovie = totalMovies[0]
-    this.setState(() => ({
-      Banner:{
-      image:BannerMovie.poster_path,
-      title:BannerMovie.title,
-      overview:BannerMovie.overview
-    }}))
-   
+  MoreMovies = async (page) => {
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/discover/movie`,
+        {
+          params: {
+            api_key: '06293f6c0ca5b9644e6de0b6aee187c5',
+            language: 'en-US',
+            sort_by: 'popularity.desc',
+            include_adult: false,
+            include_video: false,
+            page: page,
+            with_watch_monetization_types: 'flatrate',
+          },
+        }
+      );
+  
+      const totalMovies = response.data.results;
+  
       this.setState((prev) => ({
-        MoviesData:[...prev.MoviesData,...totalMovies]
-      }))
-      
-    
-      
-    })
-  }
+        Banner: {
+          image: totalMovies.length > 0 ? totalMovies[0].poster_path : '',
+          title: totalMovies.length > 0 ? totalMovies[0].title : '',
+          overview: totalMovies.length > 0 ? totalMovies[0].overview : '',
+        },
+        MoviesData: [...prev.MoviesData, ...totalMovies],
+      }));
+    } catch (error) {
+      console.error('Error fetching movies:', error);
+    }
+  };
+  
   
 
   MapingCards = () => {
@@ -92,28 +104,42 @@ export default class MoviesData extends Component {
     
 
       
-  axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=06293f6c0ca5b9644e6de0b6aee187c5&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${ this.state.page.current}&with_watch_monetization_types=flatrate`)
-  .then(res =>{
-  let totalMovies = [...res.data.results]
-  const BannerMovie = totalMovies[0]
-
-  this.setState((prev) =>({
-    page:{
-      current:prev.page.current,
-      total:res.data.total_pages
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/discover/movie`,
+        {
+          params: {
+            api_key: '06293f6c0ca5b9644e6de0b6aee187c5',
+            language: 'en-US',
+            sort_by: 'popularity.desc',
+            include_adult: false,
+            include_video: false,
+            page: this.state.page.current,
+            with_watch_monetization_types: 'flatrate',
+            
+          },
+        }
+      );
+    
+      const totalMovies = response.data.results;
+      const BannerMovie = totalMovies[0];
+    
+      this.setState({
+        page: {
+          current: this.state.page.current,
+          total: response.data.total_pages,
+        },
+        Banner: {
+          image: BannerMovie ? BannerMovie.poster_path : '',
+          title: BannerMovie ? BannerMovie.title : '',
+          overview: BannerMovie ? BannerMovie.overview : '',
+        },
+        MoviesData: totalMovies,
+      });
+    } catch (error) {
+      console.error('Error fetching movies:', error);
     }
-  }))
-  this.setState(() => ({
-    Banner:{
-    image:BannerMovie.poster_path,
-    title:BannerMovie.title,
-    overview:BannerMovie.overview
-  }}))
     
-    this.setState(() => ({MoviesData:totalMovies}))
-  
-    
-  })
 
   }
   componentWillUnmount() {

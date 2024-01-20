@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './NavBar.css'
 import { Link } from 'react-router-dom';
-import './NavBar.css'
+import './NavBar.css';
 
 export default class NavBar extends Component {
   constructor(props){
-    super(props);
+    super(props); 
     this.state = {
-      isclicked:false
+      isclicked:false,
+      searchText:""
     }
+
   }
  
   NavClicked = () =>{
@@ -18,7 +20,7 @@ export default class NavBar extends Component {
   }
   render() {
     return (
-      <>
+      <header>
         <div className="NavContainer">
 
 
@@ -27,6 +29,38 @@ export default class NavBar extends Component {
           <Link className="navbar-brand" to='/'><img src="./logo192.png" className='NavBar-image bg-light' alt="Logo" />
     
           </Link>
+          {/* searc button */}
+          <div className="search">
+            <input 
+              type="search" 
+              name="search"
+              id="search"
+              placeholder='Search'
+              style={
+                {border:"none"}
+              }
+              onChange={(e)=>{
+                this.setState(()=>({ 
+                  searchText:e.target.value
+                }))
+              }}
+              className='rounded p-1'
+              value={this.state.searchText}
+            />
+            
+            <Link 
+            type="submit"
+            style={
+              {backgroundColor:"white"}
+              
+            }
+            to={this.state.searchText ? `search?param=${this.state.searchText}` : ""}
+             
+            className='border-0 p-1 rounded px-2'
+            
+            ><i className=" fa-solid fa-search"></i></Link>
+          </div>
+
           <button className={
             this.state.isclicked ? 
             'Nav-Togle-Button btn btn-danger' :
@@ -55,7 +89,7 @@ export default class NavBar extends Component {
         </div>
       </div>
 
-          </>
+          </header>
 
     )
   }
