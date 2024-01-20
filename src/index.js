@@ -19,7 +19,8 @@ createRoot(document.getElementById('root')).render(
       <NavBar />
       <Routes>
         {/* Add 'exact' prop to the home route */}
-        <Route path='/' element={<Home />} exact />
+        <Route path='/' element={<Home />}  />
+        <Route path='/MoviesFans' element={<Home />}  />
         <Route path="/favorate" element={<Favorate />} />
         <Route path='/search' element={<Search />} />
       </Routes>
