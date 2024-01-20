@@ -25,7 +25,7 @@ export default class MoviesData extends Component {
     super(props);
     
     this.state = {
-      MoviesData:[],
+      MoviesData:[], 
       
       page:{
         current:1,

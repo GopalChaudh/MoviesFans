@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { totalMoviesDataArr } from './MoviesData';
 import Localbase from 'localbase';
+
 let db = new Localbase('db')
 function FavButton(props) {
 
