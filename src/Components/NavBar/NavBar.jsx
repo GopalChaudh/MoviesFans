@@ -55,7 +55,6 @@ export default class NavBar extends Component {
               
             }
             to={this.state.searchText ? `search?param=${this.state.searchText}` : ""}
-             
             className='border-0 p-1 rounded px-2'
             
             ><i className=" fa-solid fa-search"></i></Link>

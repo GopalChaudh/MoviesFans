@@ -7,7 +7,7 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 // pages
 import Home from "./Components/Home/Home"
 import Footer from './Components/Footer/Footer';
-import SearchPage from './Components/SearchingPage/Search';
+import SearchPage from './Components/SearchingPage/Search'; 
 import NavBar from './Components/NavBar/NavBar';
 import Favorate from './Components/Favorate/Favorate'
 //css
@@ -26,6 +26,7 @@ createRoot(document.getElementById('root')).render(
                 <Route path='/' element={<Home />} />
                 <Route path="/favorate" element={<Favorate />}/>
                 <Route path='/search' element={<SearchPage />} />
+                <Route path='*' element={<Home />} />
 
             </Routes>
             <Footer />
