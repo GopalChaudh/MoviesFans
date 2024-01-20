@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import MoviesCard from '../Home/MoviesCard';
 import axios from 'axios';
 
-const Search = () => {
+const SearchPage = () => {
   
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -58,4 +58,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchPage;
