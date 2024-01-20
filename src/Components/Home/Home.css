@@ -1,6 +1,7 @@
 
 .Banner-Containar{
-    width: 100vw;
+    width: 90vw;
+    margin: auto;
     height: 80vh;
     margin-top: 2rem;
     overflow: hidden;   
@@ -8,18 +9,13 @@
 
 .Banner-Containar img{
     width: 100%;
-    filter:blur(1px) saturate(100%) contrast(100%) ;
-    transition: 1s;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s all;
     
 }
-.Banner-Containar img:hover{
-    filter: blur(8px) saturate(60%) contrast(200%) ;
 
-}
 .Banner-Card-contant{
-    /* position: relative; */
-    /* left: 5%;
-    top: -12rem; */
     top: 70%;
     color: white;
 
