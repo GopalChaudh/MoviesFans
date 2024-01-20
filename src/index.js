@@ -10,7 +10,7 @@ import Home from "./Components/Home/Home"
 import './index.css'
 const Favorate = lazy(() =>import('./Components/Favorate/Favorate'))
 const NavBar = lazy(() => import('./Components/NavBar/NavBar'))
-const Search = lazy(()=>import('./Components/search/Search'))
+import Search from './Components/search/search';
 
 
 
