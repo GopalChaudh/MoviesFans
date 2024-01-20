@@ -4,13 +4,16 @@ import { createRoot } from 'react-dom/client';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+// pages
+import Home from "./Components/Home/Home"
 import Footer from './Components/Footer/Footer';
 import Loading from './Components/Loading/Loading';
-import Home from "./Components/Home/Home"
+import Search from './Components/search/Search';
+//css
 import './index.css'
+// lazy load
 const Favorate = lazy(() =>import('./Components/Favorate/Favorate'))
 const NavBar = lazy(() => import('./Components/NavBar/NavBar'))
-import Search from './Components/search/search';
 
 
 
