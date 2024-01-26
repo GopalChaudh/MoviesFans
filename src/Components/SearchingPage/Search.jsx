@@ -40,14 +40,19 @@ const SearchPage = () => {
         (totalMoviesDataArr.length >= 1) &&
           totalMoviesDataArr.map((element, id) => (
             (element.poster_path || element.backdrop_path) && (
-              <MoviesCard
-                index={id}
-                id={element.id}
-                key={element.id}
-                title={element.title || element.original_title}
-                overview={element.overview}
-                src={element.poster_path || element.backdrop_path}
-              />
+              <MoviesCard 
+              key={element.id} 
+              id={element.id} 
+              adult={element.adult}
+              genre_ids={element.genre_ids}
+              original_language ={element.original_language}       
+              release_date = {element.release_date}
+              vote_average = {element.vote_average}
+              vote_count = {element.vote_count}
+              title={element.title || element.original_title} 
+              overview={element.overview}
+              src={element.poster_path || element.backdrop_path} />
+              
             )
           ))
       }

@@ -3,7 +3,7 @@ import MoviesCard from './MoviesCard';
 import axios from 'axios';
 
 
-export let totalMoviesDataArr = []
+// export let totalMoviesDataArr = []
 
 function Banner(props){
   return(
@@ -13,6 +13,7 @@ function Banner(props){
       <h5 className="card-title">{props.title}</h5>
       <p className="card-text">{props.overview}</p>
     </div>
+    <div className="bannerbettereffect"></div>
    
   </div>
   )
@@ -89,10 +90,21 @@ export default class MoviesData extends Component {
   MapingCards = () => {
     const { MoviesData } = this.state
     if(MoviesData.length >= 1 ){
-      totalMoviesDataArr = MoviesData
+      // totalMoviesDataArr = MoviesData
       return MoviesData.map( (element,id) => (
         
-        <MoviesCard  index={id} id={element.id} key={element.id} title={element.title || element.original_title} overview={element.overview} src={element.poster_path || element.backdrop_path}/>
+        <MoviesCard 
+        key={element.id} 
+        id={element.id} 
+        adult={element.adult}
+        genre_ids={element.genre_ids}
+        original_language ={element.original_language}       
+        release_date = {element.release_date}
+        vote_average = {element.vote_average}
+        vote_count = {element.vote_count}
+        title={element.title || element.original_title} 
+        overview={element.overview}
+        src={element.poster_path || element.backdrop_path} />
         
         ))
       }else{
@@ -120,7 +132,7 @@ export default class MoviesData extends Component {
           },
         }
       );
-    
+      
       const totalMovies = response.data.results;
       const BannerMovie = totalMovies[0];
     

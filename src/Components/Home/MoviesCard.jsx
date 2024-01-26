@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { totalMoviesDataArr } from './MoviesData';
 import Localbase from 'localbase';
 
 let db = new Localbase('db')
@@ -13,7 +12,18 @@ function FavButton(props) {
 
 
 
-export default function MoviesCard(props) {
+export default function MoviesCard({
+  id,
+  adult,
+  genre_ids,
+  original_language,
+  release_date,
+  vote_average,
+  vote_count,
+  title,
+  overview,
+  src
+}) {
   const [FavText, setFavText] = useState('Add to Favorate');
   const [tclass, setTclass] = useState('btn-danger')
   useEffect(() => {
@@ -22,25 +32,36 @@ export default function MoviesCard(props) {
         if (list.length > 0) {
           
           for (let i = 0; i < list.length; i++) {
-            if (list[i].id === props.id) {
+            if (list[i].id === id) {
               setFavText('Added')
               setTclass('btn-success')
             }
           }
         }
       })
-  }, [props.id])
+  }, [id])
   function HandleFavOnClick() {
     if (FavText === 'Add to Favorate') {
       setFavText('Added')
       setTclass("btn-success")
-      db.collection('favorates').add({ ...totalMoviesDataArr[props.index] })
+      db.collection('favorates').add({
+        id,
+        adult,
+        genre_ids,
+        original_language,
+        release_date,
+        vote_average,
+        vote_count,
+        title,
+        overview,
+        src
+      })
       
 
     } else {
       setFavText('Add to Favorate')
       setTclass("btn-danger")
-      db.collection('favorates').doc({ id: props.id }).delete()
+      db.collection('favorates').doc({ id:id }).delete()
         }
     }
 
@@ -52,7 +73,7 @@ export default function MoviesCard(props) {
     <div className="card MovieCard-Container" >
       <div className="MoviesCard-image">
 
-        <img src={`https://image.tmdb.org/t/p/w500/${props.src}`} alt="Loding..." className="card-img-top" />
+        <img src={`https://image.tmdb.org/t/p/w500/${src}`} alt="Loding..." className="card-img-top" />
       </div>
       <div className="MoviesCardFavButton">
 
@@ -63,8 +84,8 @@ export default function MoviesCard(props) {
         />
       </div>
       <div className="card-body text-card-body">
-        <h5 className="card-title">{props.title}</h5>
-        <p className="card-text">{props.overview}</p>
+        <h5 className="card-title">{title}</h5>
+        <p className="card-text">{overview}</p>
 
       </div>
     </div>
