@@ -24,8 +24,8 @@ export default function MoviesCard({
   overview,
   src
 }) {
-  const [FavText, setFavText] = useState('Add to Favorate');
-  const [tclass, setTclass] = useState('btn-danger')
+  const [FavText, setFavText] = useState('add');
+  const [tclass, setTclass] = useState('btn-success')
   useEffect(() => {
     db.collection('favorates').get().then(list => {
 
@@ -33,17 +33,17 @@ export default function MoviesCard({
           
           for (let i = 0; i < list.length; i++) {
             if (list[i].id === id) {
-              setFavText('Added')
-              setTclass('btn-success')
+              setFavText('remove')
+              setTclass('btn-danger')
             }
           }
         }
       })
   }, [id])
   function HandleFavOnClick() {
-    if (FavText === 'Add to Favorate') {
-      setFavText('Added')
-      setTclass("btn-success")
+    if (FavText === 'add') {
+      setFavText('remove')
+      setTclass("btn-danger")
       db.collection('favorates').add({
         id,
         adult,
@@ -59,8 +59,8 @@ export default function MoviesCard({
       
 
     } else {
-      setFavText('Add to Favorate')
-      setTclass("btn-danger")
+      setFavText('add')
+      setTclass("btn-success")
       db.collection('favorates').doc({ id:id }).delete()
         }
     }

@@ -24,7 +24,11 @@ export default function FavMoviesCard({
   }
 
   return (
-    <div className="card mb-3 CardContaint">
+    <div className="card mb-3 CardContaint" 
+    style={
+      {display: clicked ? "none" : "block",}
+  }
+    >
       <div className="row g-0">
         <div className="col-md-4">
         <img src={`https://image.tmdb.org/t/p/w500/${src}`} className="img-fluid rounded-start" alt="Loading..." />
