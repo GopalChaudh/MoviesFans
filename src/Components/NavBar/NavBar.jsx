@@ -4,18 +4,19 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 export default class NavBar extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props){
+    super(props); 
     this.state = {
-      isclicked: false,
-      searchText: ""
+      isclicked:false,
+      searchText:""
     }
 
   }
-  NavClicked = () => {
-    this.setState((pre) => ({
-      isclicked: !pre.isclicked
-    }))
+ 
+  NavClicked = () =>{
+      this.setState((pre) =>({
+        isclicked:!pre.isclicked
+      }))
   }
   render() {
     return (
@@ -23,61 +24,71 @@ export default class NavBar extends Component {
         <div className="NavContainer">
 
 
-          <nav className="navbar Main-Navbar bg-light" >
-            <div className='Main-Navbar-contant '>
-              <Link className="navbar-brand" to='/'><img src="./logo192.png" className='NavBar-image bg-light' alt="Logo" />
+        <nav className="navbar Main-Navbar bg-light" >
+        <div className='Main-Navbar-contant '>
+          <Link className="navbar-brand" to='/'><img src="./logo192.png" className='NavBar-image bg-light' alt="Logo" />
+    
+          </Link>
+          {/* searc button */}
+          <div className="search">
+            <input 
+              type="search" 
+              name="search"
+              id="search"
+              placeholder='Search'
+              style={
+                {border:"none"}
+              }
+              onChange={(e)=>{
+                this.setState(()=>({ 
+                  searchText:e.target.value
+                }))
+              }}
+              className='rounded p-1'
+              value={this.state.searchText}
+            />
+            
+            <Link 
+            type="submit"
+            style={
+              {backgroundColor:"white"}
+              
+            }
+            to={this.state.searchText ? `search?param=${this.state.searchText}` : ""}
+            className='border-0 p-1 rounded px-2'
+            
+            ><i className=" fa-solid fa-search"></i></Link>
+          </div>
 
-              </Link>
-              {/* searc button */}
+          <button className={
+            this.state.isclicked ? 
+            'Nav-Togle-Button btn btn-danger' :
+            'Nav-Togle-Button btn btn-primary'
+          } onClick={this.NavClicked}>
+          {this.state.isclicked ? 
+          <i className=" fa-solid fa-xmark"></i>:
+          <i className=" fa-solid fa-bars"></i>
+        }
+            
+            </button>
+        </div>
+        
+      </nav>
+    </div>
 
-              <form onSubmit={`/MoviesFans/search?param=${this.state.searchText}`} className="search-bar">
-                <input
-                  type="search"
-                  name="search-movies"
-                  pattern=".*\S.*"
-                  placeholder='Search '
-                  onChange={(e) => {
-                    this.setState(() => ({ searchText: e.target.value }));
-                  }}
-                  style={
-                    {boxShadow:"0 0 3px black inset"}
-                  }
-                  required
-                  className="p-1  rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+      <div className='NavBar-Hidden-containar' isvisible = {`${this.state.isclicked}`} onClick={this.NavClicked}>
+        <div>
 
-              </form>
-
-
-              <button className={
-                this.state.isclicked ?
-                  'Nav-Togle-Button btn btn-danger' :
-                  'Nav-Togle-Button btn btn-primary'
-              } onClick={this.NavClicked}>
-                {this.state.isclicked ?
-                  <i className=" fa-solid fa-xmark"></i> :
-                  <i className=" fa-solid fa-bars"></i>
-                }
-
-              </button>
-            </div>
-
+          <nav className='navbar Main-Navbar p-1'>
+          <Link className="navbar-brand" to='/'><img src="logo192.png" className='NavBar-image' alt="Logo" /></Link>
+          <Link className="navbar-brand" to='/'><span>Home</span></Link>
+          <Link className="navbar-brand" to='/favorate'><span>Favorate</span></Link>
+          
           </nav>
         </div>
+      </div>
 
-        <div className='NavBar-Hidden-containar' isvisible={`${this.state.isclicked}`} onClick={this.NavClicked}>
-          <div>
-
-            <nav className='navbar Main-Navbar p-1'>
-              <Link className="navbar-brand" to='/'><img src="logo192.png" className='NavBar-image' alt="Logo" /></Link>
-              <Link className="navbar-brand" to='/'><span>Home</span></Link>
-              <Link className="navbar-brand" to='/favorite'><span>favorite</span></Link>
-
-            </nav>
-          </div>
-        </div>
-
-      </header>
+          </header>
 
     )
   }
