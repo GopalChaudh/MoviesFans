@@ -12,11 +12,6 @@ export default class NavBar extends Component {
     }
 
   }
-  handleSubmit = (e) => {
-    e.preventDefault();
-    // Redirect or perform any other action based on the search query
-    window.location.href = `/MoviesFans/search?param=${this.state.searchText}`;
-  };
   NavClicked = () => {
     this.setState((pre) => ({
       isclicked: !pre.isclicked
@@ -35,7 +30,7 @@ export default class NavBar extends Component {
               </Link>
               {/* searc button */}
 
-              <form onSubmit={this.handleSubmit} className="search-bar">
+              <form onSubmit={`/MoviesFans/search?param=${this.state.searchText}`} className="search-bar">
                 <input
                   type="search"
                   name="search-movies"
