@@ -82,7 +82,7 @@ export default class NavBar extends Component {
           <nav className='navbar Main-Navbar p-1'>
           <Link className="navbar-brand" to='/'><img src="logo192.png" className='NavBar-image' alt="Logo" /></Link>
           <Link className="navbar-brand" to='/'><span>Home</span></Link>
-          <Link className="navbar-brand" to='/favorite'><span>Favorate</span></Link>
+          <Link className="navbar-brand" to='/favourite'><span>favourite</span></Link>
           
           </nav>
         </div>

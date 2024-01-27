@@ -24,8 +24,8 @@ createRoot(document.getElementById('root')).render(
             <Routes>
 
                 <Route path='/' element={<Home />} />
-                <Route path="/favorite" element={<Favorate />}/>
-                <Route path="/MoviesFans/favorite" element={<Favorate />}/>
+                <Route path="/favourite" element={<Favorate />}/>
+                <Route path="/MoviesFans/favourite" element={<Favorate />}/>
                 <Route path='/search' element={<SearchPage />} />
                 <Route path='/MoviesFans/search' element={<SearchPage />} />
                 <Route path='/MoviesFans/*' element={<Home />} />
