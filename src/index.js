@@ -28,8 +28,8 @@ createRoot(document.getElementById('root')).render(
                 <Route path="/MoviesFans/favorite" element={<Favorate />}/>
                 <Route path='/search' element={<SearchPage />} />
                 <Route path='/MoviesFans/search' element={<SearchPage />} />
-                <Route path='*' element={<Home />} />
                 <Route path='/MoviesFans/*' element={<Home />} />
+                <Route path='*' element={<Home />} />
 
             </Routes>
             <Footer />
